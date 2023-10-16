@@ -4,15 +4,15 @@ import SideBar from "@/components/SideBar";
 
 const layout = ({ children }) => {
   return (
-    <main className="min-h-screen w-full">
+    <main className="min-h-screen pb-10 w-full flex flex-col gap-5">
       <Nav />
-      <section className="max-container mt-10">
-        <main className="w-full flex flex-1 gap-10 items-start justify-normal h-screen">
-          <section className="w-[15%]">
-            <SideBar />
-          </section>
-          <section className="w-[85%]">{children}</section>
-        </main>
+      <section className="max-container w-full flex flex-1 gap-10 md:gap-6">
+        <section className="w-[10%] max-md:w-[16%] max-sm:hidden">
+          <SideBar />
+        </section>
+        <section className="w-[90%] max-md:w-[80%] max-sm:w-full">
+          {children}
+        </section>
       </section>
     </main>
   );
